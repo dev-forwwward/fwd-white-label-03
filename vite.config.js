@@ -12,6 +12,12 @@ export default defineConfig({
         headers: {
             'Access-Control-Allow-Private-Network': 'true',
         },
+        hmr: {
+            // Allows HMR WebSocket to work through a Cloudflare tunnel (Firefox/Safari)
+            // The client connects to the tunnel host on port 443 (WSS) instead of localhost
+            protocol: 'wss',
+            clientPort: 443,
+        },
     },
 
     build: {
