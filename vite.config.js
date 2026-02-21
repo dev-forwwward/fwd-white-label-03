@@ -9,6 +9,9 @@ export default defineConfig({
         port: 5173,
         cors: true,
         open: false,
+        headers: {
+            'Access-Control-Allow-Private-Network': 'true',
+        },
     },
 
     build: {
